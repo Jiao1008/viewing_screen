@@ -1,0 +1,19 @@
+{
+  "name": "viewing_screen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "llj",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^16.0.4"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.0.1"
+  }
+}
