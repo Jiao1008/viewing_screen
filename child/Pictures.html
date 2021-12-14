@@ -7,16 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="../childjs/pictures.js"></script>
-    <title>Document</title>
+    <title>图片</title>
 </head>
 
 <body>
     <div class="Pictures">
-        <iframe id="content"
-            src="https://show.zohopublic.com.cn/publish/d03xdebba333ef18b42b9a41cedb5cf536d9a/params?toolbar=true&menu=true&loop=true&viewtype=2&time=5000"
-            width="1700" height="992" style="border:1px solid #aabbcc;max-width: 100%;" allowfullscreen="true"
-            mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        <video width="100%" height="100%" id="player" autoplay loop>
+            <source src="../assets/PPT1.mp4" type="video/mp4">
+        </video>
     </div>
+
 
 </body>
 <!-- <script type="text/javascript">
@@ -33,6 +33,8 @@
         if (err) return console.log(err)
     })
 </script> -->
+<script src="../childjs/common.js"></script>
+<!-- <script src="../childjs/pictures.js"></script> -->
 
 <style>
     * {

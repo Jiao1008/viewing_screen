@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js"></script>
-    <title>Document</title>
+    <title>视频</title>
 </head>
 
 <body>
 
     <div>
-        <video width="100%" id="player" autoplay loop>
+        <video width="100%" height="100%" id="player" controls autoplay loop>
             <!-- preload属性，则视频在页面加载时进行加载，并预备播放。不与autoplay同用 。autoplay="autoplay"-->
             <!-- <video> 元素会尝试播放以 mp4、ogg 或 webm 格式中的一种来播放视频。如果均失败，则回退到 <embed> 元素。 -->
             <source src="../assets/王嘉尔,Internet Money - Drive You Home.mp4" type="video/mp4" />
@@ -23,11 +23,12 @@
             </object>
         </video>
     </div>
-    <button onclick="ctrl()">暂停<span>/</span>播放</button>
+    <!-- <button onclick="ctrl()">暂停<span>/</span>播放</button>
     <button onclick="mute()">静音</button>
-    <button onclick="exit()">退出</button>
+    <button onclick="exit()">退出</button> -->
 
 </body>
+<script src="../childjs/common.js"></script>
 <script src="../childjs/video.js"></script>
 <style>
     * {

@@ -1,26 +1,20 @@
-const { app, BrowserWindow, globalShortcut, ipcMain } = require('electron')
+const { app, BrowserWindow, globalShortcut, ipcMain, Menu } = require('electron')
 // const path = require('path')
-// const { electron } = require('electron');
 
 let win;
 function createWindow() {
     win = new BrowserWindow({
-        // width: 800,
-        // height: 600,
-        fullscreen: true,
-        fullscreenable: true,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
             webSecurity: true,
-            // preload: path.join(__dirname, './preload.js')
         }
     })
 
-    // win.minimizable(false)
     win.setFullScreen(true)
     win.webContents.openDevTools();
     win.loadFile('index.html');
+
     win.on('closed', () => {
         win = null;
     });
@@ -29,7 +23,6 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
-    // require('@electron/remote/main').initialize()
 
     createWindow()
 
@@ -40,40 +33,11 @@ app.whenReady().then(() => {
     })
 })
 
-// ipcMain.on('winVideo', (event, err) => {
-// let videoWin = new BrowserWindow({
-//     parent: win,
-//     // frame: false,
-//     webPreferences: {
-//         nodeIntegration: true,
-//         contextIsolation: false,
-//         webSecurity: true,
-//     }
-// })
-
-// videoWin.setFullScreen(true)
-// videoWin.show()
-// videoWin.loadFile('./child/Video.html');
-
-// videoWin.on('closed', () => {
-//     videoWin = null;
-//     // win.show()
-// });
-
-// // console.log("Opened!")
-// if (err) {
-//     console.log(err)
-// }
-// exitFullscreen(videoWin)
-// })
-
-// ipcMain.on('closewin', () => {
-//     console.log("Exited successfully!")
-//     // videoWin.destroy()
-// })
+ipcMain.on('post', (arg) => {
+    console.log("我收到了", arg)
+})
 
 
-// ipcMain.on('exitFullscreen', exitFullscreen)
 
 
 app.on('window-all-closed', () => {
@@ -93,4 +57,3 @@ function exitFullscreen(obj) {
     // 检查快捷键是否注册成功
     console.log(globalShortcut.isRegistered('ESC'))
 }
-// require('./childjs/video')

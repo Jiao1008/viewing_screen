@@ -1,4 +1,14 @@
-const { ipcRender } = require('electron')
+setTimeout(() => {
+    alert("当前屏幕宽：" + window.screen.width + ", 当前屏幕高：" + window.screen.height)
+}, 10000)
+
+
+var Video = document.getElementsByTagName('video')
+Video.style.width = window.screen.width
+Video.style.height = window.screen.height
+
+
+alert(Video.style.width, Video.style.height)
 
 
 let player = document.getElementById('player')
@@ -20,18 +30,7 @@ function mute() {
     player.muted = player.muted ? false : true
 }
 
-// function exit() {
-//     // ipcRender.send('closewin', "I want to exit")
-//     console.log("I want to exit")
-// }
 
-function exitFullscreen(obj) {
-    const ret = globalShortcut.register('ESC', () => {
-        obj.setFullScreen(false)
-    })
-    if (!ret) {
-        console.log('registration failed')
-    }
-    // 检查快捷键是否注册成功
-    console.log(globalShortcut.isRegistered('ESC'))
-}
+
+
+

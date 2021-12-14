@@ -22,7 +22,7 @@ document.getElementById('stop').addEventListener('click', () => {
     audio.currentTime = 0;
 })
 
-
-// function exit() {
-//     ipcRender.send('closewin', "exited")
-// }
+document.getElementById('child').addEventListener('click', sendMessageToParent);
+function sendMessageToParent() {
+    window.opener.postMessage("这是来自子窗口的消息。");
+}
