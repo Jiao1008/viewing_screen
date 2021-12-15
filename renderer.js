@@ -1,6 +1,5 @@
 
 const path = require('path');
-const { BrowserWindow } = require('electron').remote
 
 let videoWin
 let audioWin
@@ -28,9 +27,9 @@ document.getElementById('video').addEventListener('click', () => {
     // });
     console.log("newwin: ", videoWin);
 });
-document.getElementById('closevideoWin').addEventListener('click', () => {
-    videoWin.close()
-})
+// document.getElementById('closevideoWin').addEventListener('click', () => {
+//     videoWin.close()
+// })
 
 
 document.getElementById('audio').addEventListener('click', () => {
@@ -53,9 +52,9 @@ document.getElementById('audio').addEventListener('click', () => {
     // });
     console.log("newwin: ", audioWin);
 });
-document.getElementById('closeaudioWin').addEventListener('click', () => {
-    audioWin.close()
-})
+// document.getElementById('closeaudioWin').addEventListener('click', () => {
+//     audioWin.close()
+// })
 
 
 document.getElementById('pictures').addEventListener('click', () => {
@@ -78,9 +77,9 @@ document.getElementById('pictures').addEventListener('click', () => {
     // });
     console.log("newwin: ", picturesWin);
 });
-document.getElementById('closepicturesWin').addEventListener('click', () => {
-    picturesWin.close()
-})
+// document.getElementById('closepicturesWin').addEventListener('click', () => {
+//     picturesWin.close()
+// })
 
 
 

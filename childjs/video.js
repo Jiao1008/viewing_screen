@@ -1,20 +1,21 @@
-setTimeout(() => {
-    alert("当前屏幕宽：" + window.screen.width + ", 当前屏幕高：" + window.screen.height)
-}, 10000)
+// setTimeout(() => {
+//     alert("当前屏幕宽：" + window.screen.width + ", 当前屏幕高：" + window.screen.height)
+// }, 10000)
 
-
-var Video = document.getElementsByTagName('video')
-Video.style.width = window.screen.width
-Video.style.height = window.screen.height
-
-
-alert(Video.style.width, Video.style.height)
-
+// let newwidtn = window.screen.width
+// let newheight = window.screen.height
+// console.log(newwidtn,newheight)
 
 let player = document.getElementById('player')
 player.addEventListener('error', () => {
     document.getElementById('player').load()
 })
+
+// console.log(player)
+// player.width = newwidtn
+// player.height = newheight
+
+console.log(player.width, player.height)
 
 function ctrl() {
     let player = document.getElementById('player')
@@ -29,8 +30,6 @@ function mute() {
     let player = document.getElementById('player')
     player.muted = player.muted ? false : true
 }
-
-
 
 
 
